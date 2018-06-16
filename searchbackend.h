@@ -31,7 +31,7 @@ public:
         QString                     name;
         GeoCoordinates::Pair        boundingBox;
         QString                     internalId;
-
+        QString                     country;
 
     };
 

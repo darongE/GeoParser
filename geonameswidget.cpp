@@ -123,7 +123,7 @@ void GeoNamesWidget::slotTriggerSearch()
         return;
 
     d->searchInProgress = true;
-    d->searchBackend->search("osm",ui->KeywordEdit->text());
+    d->searchBackend->search("geonames.org",ui->KeywordEdit->text());
 
      slotUpdateAction();
 }

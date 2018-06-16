@@ -230,11 +230,14 @@ bool SearchBackend::search(const QString &backendName, const QString &searchTerm
         QString lonString;
         QString displayName;
         QString countryName;
+        int geoNameId;
 
         latString = geonamesObj["lat"].toString();
         lonString = geonamesObj["lng"].toString();
         displayName =geonamesObj["name"].toString();
         countryName = geonamesObj["countryName"].toString();
+        geoNameId   = geonamesObj["geonameId"].toInt();
+
         // now parse the strings:
         qreal lat;
         qreal lon;
@@ -246,6 +249,14 @@ bool SearchBackend::search(const QString &backendName, const QString &searchTerm
         SearchResult m_result;
         m_result.coordinates = GeoCoordinates(lat, lon);
         m_result.name        = displayName;
+        m_result.country     = countryName;
+
+        QString strgeoNameId = QString::number(geoNameId);
+        if (!strgeoNameId.isEmpty())
+        {
+            m_result.internalId = QLatin1String("geonames.org-") + strgeoNameId;
+        }
+
 
         d->results << m_result;
 

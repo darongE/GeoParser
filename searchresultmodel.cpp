@@ -76,9 +76,11 @@ QVariant SearchResultModel::data(const QModelIndex &index, int role) const
             "long long long"
             "long QString");*/
             case Qt::DisplayRole:
-            return    QString("%1\n"" %2"" ,%3").arg(d->searchResults.at(rowNumber).result.name)
+            return    QString("%1\n"" %2"" ,%3 , %4").arg(d->searchResults.at(rowNumber).result.name)
                         .arg(d->searchResults.at(rowNumber).result.coordinates.lat())
-                        .arg(d->searchResults.at(rowNumber).result.coordinates.lon());
+                        .arg(d->searchResults.at(rowNumber).result.coordinates.lon())
+                        .arg(d->searchResults.at(rowNumber).result.country);
+
 
             default:
                 return QVariant();
