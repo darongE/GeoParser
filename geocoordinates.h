@@ -5,9 +5,9 @@
 #include <QList>
 #include <QPair>
 
-class GeoCoordinates : public QObject
+class GeoCoordinates
 {
-    Q_OBJECT
+
 public:
 
     enum HasFlag

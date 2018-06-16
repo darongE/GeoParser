@@ -45,7 +45,6 @@ public:
     bool search(const QString& backendName,const QString& searchTerm);
     SearchResult::List getResults() const;
     QString getErrorMessage() const;
-    QList<QPair<QString, QString> > getBackends() const;
 
 
 signals:
